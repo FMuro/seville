@@ -32,11 +32,11 @@ If you'd like to use this theme but you feel you need some missing options or fe
 
 ## TODO
 
-- [] Cleanup and comment `beamerthemeseville.sty`.
+- [ ] Cleanup and comment `beamerthemeseville.sty`.
 - In case anyone is interested:
-  - [] Documentation.
-  - [] Extra features.
-  - [] [CTAN](https://www.ctan.org).
+  - [ ] Documentation.
+  - [ ] Extra features.
+  - [ ] [CTAN](https://www.ctan.org).
 
 ## License
 

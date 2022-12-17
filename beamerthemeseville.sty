@@ -1,0 +1,241 @@
+%% beamerthemeseville.sty
+%% Copyright 2022 F. Muro
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is F. Muro.
+%
+% This work consists of the file beamerthemeseville.sty.
+
+\mode<presentation>
+
+\RequirePackage{fontawesome5}
+\RequirePackage{academicons}
+\RequirePackage[sfdefault,lining]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
+\RequirePackage[mathrm=sym]{unicode-math}
+\setmathfont{Fira Math}
+\RequirePackage[prefix=]{xcolor-solarized}
+\RequirePackage{etoolbox}
+\RequirePackage{booktabs}
+
+\useinnertheme{tcolorbox}
+
+% Settings
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{title}{fg=violet}
+\setbeamercolor*{frametitle}{bg=base02,fg=base2}
+\setbeamercolor*{background canvas}{bg=base3}
+\setbeamercolor*{normal text}{fg=base02}
+\setbeamercolor*{inverted text}{fg=base2}
+\setbeamercolor*{alerted text}{fg=red}
+\setbeamercolor{block title}{fg=blue, bg=base3}
+\setbeamercolor{block title alerted}{fg=red, bg=base3}
+\setbeamercolor{block title example}{fg=green, bg=base3}
+\setbeamercolor{block body}{bg=base3}
+\setbeamercolor{block body alerted}{bg=base3}
+\setbeamercolor{block body example}{bg=base3}
+\setbeamercolor{enumerate item}{fg=base1}
+\setbeamercolor{enumerate subitem}{fg=base1}
+\setbeamercolor{enumerate subsubitem}{fg=base1}
+\setbeamercolor{itemize item}{fg=base1}
+\setbeamercolor{itemize subitem}{fg=base1}
+\setbeamercolor{itemize subsubitem}{fg=base1}
+\setbeamercolor{section number projected}{fg=base1}
+\setbeamercolor{section in toc}{fg=base02}
+
+
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{itemize subitem}{$\circ$}
+\setbeamertemplate{itemize subsubitem}{-}
+\setbeamertemplate{enumerate subitem}{\alph{enumii}.}
+\setbeamertemplate{enumerate subsubitem}{\roman{enumiii}.}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{subsubsection in toc}[subsubsections numbered]
+
+
+\AtBeginEnvironment{theorem}{%
+  \setbeamercolor{block title}{fg=red}
+}
+\AtBeginEnvironment{lemma}{%
+  \setbeamercolor{block title}{fg=yellow}
+}
+\AtBeginEnvironment{corollary}{%
+  \setbeamercolor{block title}{fg=cyan}
+}
+\AtBeginEnvironment{fact}{%
+  \setbeamercolor{block title}{fg=orange}
+}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{fg=base1}
+}
+\renewcommand{\qedsymbol}{$\color{base1}{\blacksquare}$}
+
+\setlength{\parskip}{.5\baselineskip}
+
+
+\setbeamerfont*{framesubtitle}{series=\itshape\small}
+\setbeamerfont*{title}{series=\bfseries, size=\Large}
+\setbeamerfont*{subtitle}{series=\bfseries\itshape}
+\setbeamerfont*{date}{series=\itshape}
+\setbeamerfont*{alerted text}{series=\bfseries\itshape}
+\setbeamerfont*{block title}{series=\itshape\normalsize}
+\addtobeamertemplate{theorem begin}{\normalfont}{}
+
+%\RequirePackage[most]{tcolorbox}
+
+\tcbsetforeverylayer{
+    fonttitle=\bfseries\itshape,
+    colback=base3,
+    colbacktitle=base3,
+    size=tight,
+    top=2mm,
+    bottom=1mm,
+    enhanced,
+    frame hidden,
+    borderline west = {2pt}{-2mm}{tcbcoltitle}
+}
+
+\NewDocumentEnvironment{proposition}{ o }{%
+\setbeamercolor{block title}{fg=magenta}
+\begin{block}{Proposition \IfValueT{#1}{(#1)}}
+    }{%
+\end{block}}
+\NewDocumentEnvironment{remark}{ o }{%
+\setbeamercolor{block title}{fg=violet}
+\begin{block}{Remark \IfValueT{#1}{(#1)}}
+    }{%
+\end{block}}
+
+
+
+\NewDocumentCommand\email{ o m }{\newcommand\insertemail{\href{mailto:\IfValueTF{#1}{#1}{#2}}{\mbox{{\scriptsize\faEnvelope}\hspace{.5em}\scriptsize #2}}}}
+\NewDocumentCommand\site{ o m }{\newcommand\insertsite{\href{\IfValueTF{#1}{#1}{#2}}{\mbox{{\scriptsize\faHome}\hspace{.5em}\scriptsize #2}}}}
+\NewDocumentCommand\mathscinet{ m }{\newcommand\insertmathscinet{\href{#1}{\mbox{{\scriptsize\faUniversity}\hspace{.5em}\scriptsize MathSciNet}}}}
+\NewDocumentCommand\arxiv{ m }{\newcommand\insertarxiv{\href{#1}{\mbox{{\scriptsize\aiarXiv}\hspace{.5em}\scriptsize arXiv}}}}
+\NewDocumentCommand\zotero{ m }{\newcommand\insertzotero{\href{#1}{\mbox{{\scriptsize\aiZoteroSquare}\hspace{.5em}\scriptsize Zotero}}}}
+\NewDocumentCommand\googlescholar{ m }{\newcommand\insertgooglescholar{\href{#1}{\mbox{{\scriptsize\aiGoogleScholar}\hspace{.5em}\scriptsize Google Scholar}}}}
+\NewDocumentCommand\orcid{ m }{\newcommand\insertorcid{\href{#1}{\mbox{{\scriptsize\aiOrcid}}\hspace{.5em}\scriptsize ORCID}}}
+\NewDocumentCommand\scopus{ m }{\newcommand\insertscopus{\href{#1}{\mbox{{\scriptsize\aiScopusSquare}\hspace{.5em}\scriptsize Scopus}}}}
+\NewDocumentCommand\facebook{ m }{\newcommand\insertfacebook{\href{#1}{\mbox{{\scriptsize\faFacebook}\hspace{.5em}\scriptsize Facebook}}}}
+\NewDocumentCommand\linkedin{ m }{\newcommand\insertlinkedin{\href{#1}{\mbox{{\scriptsize\faLinkedin}\hspace{.5em}\scriptsize Linkedin}}}}
+\NewDocumentCommand\github{ m }{\newcommand\insertgithub{\href{https://github.com/#1}{\mbox{{\scriptsize\faGithub}\hspace{.5em}\scriptsize #1}}}}
+\NewDocumentCommand\gitlab{ m }{\newcommand\insertgitlab{\href{https://gitlab.com/#1}{\mbox{{\scriptsize\faGitlab}\hspace{.5em}\scriptsize #1}}}}
+\NewDocumentCommand\twitter{ m }{\newcommand\inserttwitter{\href{https://twitter.com/#1}{\mbox{{\scriptsize\faTwitter}\hspace{.5em}\scriptsize @#1}}}}
+\NewDocumentCommand\instagram{ m }{\newcommand\insertinstagram{\href{https://www.instagram.com/#1}{\mbox{{\scriptsize\faInstagram}\hspace{.5em}\scriptsize #1}}}}
+
+% Title page
+\defbeamertemplate*{title page}{}{
+ \vfill
+  {\usebeamerfont{title}\color{red}{\inserttitle}}\par
+  {\usebeamerfont{subtitle}\insertsubtitle}\par
+  {\usebeamerfont{date}\insertdate}\par
+  {\usebeamerfont{author}\insertauthor}\newline
+  {\usebeamerfont{institute}\insertinstitute}\par
+  {\@ifundefined{insertemail}{}{\insertemail\quad}
+  \@ifundefined{insertsite}{}{\insertsite\quad}
+  \@ifundefined{insertmathscinet}{}{\insertmathscinet\quad}
+  \@ifundefined{insertarxiv}{}{\insertarxiv\quad}
+  \@ifundefined{insertzotero}{}{\insertzotero\quad}
+  \@ifundefined{insertgooglescholar}{}{\insertgooglescholar\quad}
+  \@ifundefined{insertorcid}{}{\insertorcid\quad}
+  \@ifundefined{insertscopus}{}{\insertscopus\quad}
+  \@ifundefined{insertgithub}{}{\insertgithub\quad}
+  \@ifundefined{insertgitlab}{}{\insertgitlab\quad}
+  \@ifundefined{insertfacebook}{}{\insertfacebook\quad}
+  \@ifundefined{insertlinkedin}{}{\insertlinkedin\quad}
+  \@ifundefined{inserttwitter}{}{\inserttwitter\quad}
+  \@ifundefined{insertinstagram}{}{\insertinstagram\quad}
+}}
+
+\renewcommand<>\beamer@framefootnotetext[1]{%
+  \global\setbox\beamer@footins\vbox{%
+    \hsize\framewidth
+    \textwidth\hsize
+    \columnwidth\hsize
+    \unvbox\beamer@footins
+    \reset@font\footnotesize
+    \@parboxrestore
+    \protected@edef\@currentlabel
+   {\noindent\csname p@footnote\endcsname\@thefnmark}%
+    \hskip -1.5em    
+    \color@begingroup
+      \uncover#2{\@makefntext{%
+        \rule\z@\footnotesep\ignorespaces\parbox[t]{.99\textwidth}{#1\@finalstrut\strutbox}\vskip1sp}}%
+    \color@endgroup}%
+}
+
+% Bibliography
+\RequirePackage[
+maxbibnames=99, % show all author names
+uniquename=init,
+backend=biber,
+style=ext-authoryear,
+isbn=false, % print no ISBN
+doi=false, % print no DOI
+url=false, % print no URL
+eprint=false, % print no preprint reference
+giveninits=true % print initials, not full names
+]{biblatex}
+\RequirePackage{csquotes} % recommended by biblatex
+\RequirePackage{hyperref}
+
+
+% Whole citations are clickable, not just dates
+\DeclareFieldFormat{linkallcite}{%
+  \DeclareFieldFormat{bibhyperref}{##1}%
+  \bibhyperref{#1}%
+}
+\AtIntrocite{\DeclareFieldFormat{linkallcite}{#1}}
+
+\letbibmacro{cite:orig}{cite}
+\renewbibmacro{cite}{%
+  \printtext[linkallcite]{%
+    \usebibmacro{cite:orig}}}
+
+% Do not include notes in the bibliography and option to skip annotations
+\AtEveryBibitem{\clearfield{note}}
+\newbool{clearannotation}
+\AtEveryBibitem{\ifbool{clearannotation}{\clearfield{annotation}}{}}
+
+% Fomatting bibliography volume + number + electronic identifier
+\renewbibmacro{volume+number+eid}{
+	\printfield{volume}%
+	\setunit{\addcomma\space no.~}%
+	\printfield{number}
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+
+
+% Remove "in:" before journal reference
+\renewbibmacro{in:}{}
+
+% Remove bibliography indentation from second line
+\setlength{\bibhang}{1mm}
+
+% Hyperlink in titles of the bibliography
+\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat*{title}{\usebibmacro{string+doi}{``#1''}}
+
+% Bibliography symbol
+\setbeamertemplate{bibliography item}{\faBook}
+
+% Bibliography colors
+\setbeamercolor{bibliography item}{fg=base0}
+\setbeamercolor*{bibliography entry title}{fg=base02}
+\setbeamercolor*{bibliography entry author}{fg=base02}
+\setbeamercolor*{bibliography entry location}{fg=base01}
+\setbeamercolor*{bibliography entry note}{fg=base0}
+
+\renewcommand*{\bibfont}{\small}
+
+\mode<all>

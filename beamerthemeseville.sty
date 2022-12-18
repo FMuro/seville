@@ -26,6 +26,11 @@
 \RequirePackage{etoolbox}
 \RequirePackage{booktabs}
 
+% allow escape _ without having to write \_
+% this symbol appears sometimes in arXiv user identifiers, maybe also twitter etc. 
+% we may have to add more similar escapes
+\catcode`\_=12 
+
 % Bibliography
 \RequirePackage[
 maxbibnames=99, % show all author names
@@ -185,7 +190,9 @@ giveninits=true % print initials, not full names
 \NewDocumentCommand\email{ o m }{\newcommand\insertemail{\href{mailto:\IfValueTF{#1}{#1}{#2}}{\mbox{{\scriptsize\faEnvelope}\hspace{.5em}\scriptsize #2}}}}
 \NewDocumentCommand\site{ o m }{\newcommand\insertsite{\href{\IfValueTF{#1}{#1}{#2}}{\mbox{{\scriptsize\faHome}\hspace{.5em}\scriptsize #2}}}}
 \NewDocumentCommand\mathscinet{ m }{\newcommand\insertmathscinet{\href{#1}{\mbox{{\scriptsize\faUniversity}\hspace{.5em}\scriptsize MathSciNet}}}}
-\NewDocumentCommand\arxiv{ m }{\newcommand\insertarxiv{\href{#1}{\mbox{{\scriptsize\aiarXiv}\hspace{.5em}\scriptsize arXiv}}}}
+\NewDocumentCommand\arxiv{ s m }{
+    \newcommand\insertarxiv{\href{\IfBooleanTF{#1}{https://arxiv.org/a/#2.html}{#2}}{\mbox{\scriptsize\aiarXiv}\hspace{.5em}\scriptsize \IfBooleanTF{#1}{#2}{arXiv}}}
+  }
 \NewDocumentCommand\zotero{ m }{\newcommand\insertzotero{\href{#1}{\mbox{{\scriptsize\aiZoteroSquare}\hspace{.5em}\scriptsize Zotero}}}}
 \NewDocumentCommand\googlescholar{ m }{\newcommand\insertgooglescholar{\href{#1}{\mbox{{\scriptsize\aiGoogleScholar}\hspace{.5em}\scriptsize Google Scholar}}}}
 \NewDocumentCommand\orcid{ m }{\newcommand\insertorcid{\href{#1}{\mbox{{\scriptsize\aiOrcid}}\hspace{.5em}\scriptsize ORCID}}}

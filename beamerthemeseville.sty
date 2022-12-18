@@ -26,6 +26,70 @@
 \RequirePackage{etoolbox}
 \RequirePackage{booktabs}
 
+% Bibliography
+\RequirePackage[
+maxbibnames=99, % show all author names
+uniquename=init,
+backend=biber,
+style=ext-authoryear,
+isbn=false, % print no ISBN
+doi=false, % print no DOI
+url=false, % print no URL
+eprint=false, % print no preprint reference
+giveninits=true % print initials, not full names
+]{biblatex}
+%\RequirePackage{csquotes} % recommended by biblatex
+%\RequirePackage{hyperref}
+
+
+% Whole citations are clickable, not just dates
+\DeclareFieldFormat{linkallcite}{%
+  \DeclareFieldFormat{bibhyperref}{##1}%
+  \bibhyperref{#1}%
+}
+\AtIntrocite{\DeclareFieldFormat{linkallcite}{#1}}
+
+\letbibmacro{cite:orig}{cite}
+\renewbibmacro{cite}{%
+  \printtext[linkallcite]{%
+    \usebibmacro{cite:orig}}}
+
+% Do not include notes in the bibliography and option to skip annotations
+\AtEveryBibitem{\clearfield{note}}
+\newbool{clearannotation}
+\AtEveryBibitem{\ifbool{clearannotation}{\clearfield{annotation}}{}}
+
+% Fomatting bibliography volume + number + electronic identifier
+\renewbibmacro{volume+number+eid}{
+	\printfield{volume}%
+	\setunit{\addcomma\space no.~}%
+	\printfield{number}
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+
+
+% Remove "in:" before journal reference
+\renewbibmacro{in:}{}
+
+% Remove bibliography indentation from second line
+\setlength{\bibhang}{1mm}
+
+% Hyperlink in titles of the bibliography
+\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat*{title}{\usebibmacro{string+doi}{``#1''}}
+
+% Bibliography symbol
+\setbeamertemplate{bibliography item}{\faBook}
+
+% Bibliography colors
+\setbeamercolor{bibliography item}{fg=base0}
+\setbeamercolor*{bibliography entry title}{fg=base02}
+\setbeamercolor*{bibliography entry author}{fg=base02}
+\setbeamercolor*{bibliography entry location}{fg=base01}
+\setbeamercolor*{bibliography entry note}{fg=base0}
+
+\renewcommand*{\bibfont}{\small}
+
 \useinnertheme{tcolorbox}
 
 % Settings
@@ -173,69 +237,5 @@
         \rule\z@\footnotesep\ignorespaces\parbox[t]{.99\textwidth}{#1\@finalstrut\strutbox}\vskip1sp}}%
     \color@endgroup}%
 }
-
-% Bibliography
-\RequirePackage[
-maxbibnames=99, % show all author names
-uniquename=init,
-backend=biber,
-style=ext-authoryear,
-isbn=false, % print no ISBN
-doi=false, % print no DOI
-url=false, % print no URL
-eprint=false, % print no preprint reference
-giveninits=true % print initials, not full names
-]{biblatex}
-\RequirePackage{csquotes} % recommended by biblatex
-\RequirePackage{hyperref}
-
-
-% Whole citations are clickable, not just dates
-\DeclareFieldFormat{linkallcite}{%
-  \DeclareFieldFormat{bibhyperref}{##1}%
-  \bibhyperref{#1}%
-}
-\AtIntrocite{\DeclareFieldFormat{linkallcite}{#1}}
-
-\letbibmacro{cite:orig}{cite}
-\renewbibmacro{cite}{%
-  \printtext[linkallcite]{%
-    \usebibmacro{cite:orig}}}
-
-% Do not include notes in the bibliography and option to skip annotations
-\AtEveryBibitem{\clearfield{note}}
-\newbool{clearannotation}
-\AtEveryBibitem{\ifbool{clearannotation}{\clearfield{annotation}}{}}
-
-% Fomatting bibliography volume + number + electronic identifier
-\renewbibmacro{volume+number+eid}{
-	\printfield{volume}%
-	\setunit{\addcomma\space no.~}%
-	\printfield{number}
-	\setunit{\addcomma\space}%
-	\printfield{eid}}
-
-
-% Remove "in:" before journal reference
-\renewbibmacro{in:}{}
-
-% Remove bibliography indentation from second line
-\setlength{\bibhang}{1mm}
-
-% Hyperlink in titles of the bibliography
-\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat*{title}{\usebibmacro{string+doi}{``#1''}}
-
-% Bibliography symbol
-\setbeamertemplate{bibliography item}{\faBook}
-
-% Bibliography colors
-\setbeamercolor{bibliography item}{fg=base0}
-\setbeamercolor*{bibliography entry title}{fg=base02}
-\setbeamercolor*{bibliography entry author}{fg=base02}
-\setbeamercolor*{bibliography entry location}{fg=base01}
-\setbeamercolor*{bibliography entry note}{fg=base0}
-
-\renewcommand*{\bibfont}{\small}
 
 \mode<all>

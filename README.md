@@ -37,6 +37,7 @@ If you'd like to use this theme but you feel you need some missing options or fe
   - [ ] Documentation.
   - [ ] Extra features.
   - [ ] [CTAN](https://www.ctan.org).
+  - [ ] Overleaf.
 
 ## License
 

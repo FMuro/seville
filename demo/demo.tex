@@ -2,8 +2,6 @@
 \usetheme{seville}
 \usepackage{tikz-cd}
 
-\addbibresource{demo.bib}
-
 \title{Seville, a gorgeous beamer theme}
 \subtitle{That was the title and this is the subtitle}
 \author{John Doe}
@@ -113,6 +111,8 @@
 
     Citations like \cite{knuth-fa} contain links to the reference list. Click on it!
 
+    It also works with several papers in the same citation command, like \cite{dirac,knuthwebsite}.
+
     You can also credit theorems with citations.
 
     \begin{theorem}[\cite{einstein}]
@@ -121,13 +121,21 @@
 
 \end{frame}
 
-\subsection{Reference list}
+% \subsection{Reference list}
+
+% \begin{frame}
+%     \frametitle{References}
+%     \framesubtitle{Click on titles!}
+%     \nocite{*}
+%     \printbibliography[heading=none]
+% \end{frame}
 
 \begin{frame}
     \frametitle{References}
-    \framesubtitle{Click on titles!}
-    \nocite{*}
-    \printbibliography[heading=none]
+
+    \bibliographystyle{apalike}
+    \bibliography{demo}
+
 \end{frame}
 
 \end{document}

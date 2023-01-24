@@ -92,12 +92,26 @@
 
 \setlength{\parskip}{.5\baselineskip}
 
+% Boldface italic alterted text but not math
+\providecommand*{\beamer@alertedtext@only}{%
+  \relax
+  \ifmmode
+    \expandafter\beamer@alertedtext@warning
+  \else
+  \bfseries\itshape
+  \fi
+}
+\providecommand*{\beamer@alertedtext@warning}{%
+  \ClassWarning{beamer}
+    {Cannot use bold/italic for alerted text in math mode}%
+}
+
 
 \setbeamerfont*{framesubtitle}{series=\itshape\small}
 \setbeamerfont*{title}{series=\bfseries, size=\Large}
 \setbeamerfont*{subtitle}{series=\bfseries\itshape}
 \setbeamerfont*{date}{series=\itshape}
-\setbeamerfont*{alerted text}{series=\bfseries\itshape}
+\setbeamerfont*{alerted text}{series=\beamer@alertedtext@only}
 \setbeamerfont*{block title}{series=\itshape\normalsize}
 \addtobeamertemplate{theorem begin}{\normalfont}{}
 

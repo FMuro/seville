@@ -18,7 +18,7 @@ If you're going to use it often, you can place `beamerthemeseville.sty` somewher
 
 ## Acknowledgements
 
-This theme is inspired Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font, the [Solarized](https://ethanschoonover.com/solarized/) color palette, icons by [Font Awesome](https://fontawesome.com) and [Academicons](https://jpswalsh.github.io/academicons/), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
+This theme is inspired Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses Google's [Noto](https://fonts.google.com/noto), the [Solarized](https://ethanschoonover.com/solarized/) color palette, icons by [Font Awesome](https://fontawesome.com) and [Academicons](https://jpswalsh.github.io/academicons/), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
 
 ## Why this theme?
 

@@ -33,11 +33,16 @@ If you'd like to use this theme but you feel you need some missing options or fe
 ## TODO
 
 - [ ] Cleanup and comment `beamerthemeseville.sty`.
+- [ ] Check missing symbols in Fira Math and find replacements.
 - In case anyone is interested:
   - [ ] Documentation.
   - [ ] Extra features.
   - [ ] [CTAN](https://www.ctan.org).
   - [ ] Overleaf.
+
+## XeLaTeX?
+
+Of course! You just have to install some fonts in you system: [Fira](https://github.com/mozilla/Fira), [Fira Math](https://github.com/firamath/firamath), [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts), and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
 
 ## License
 

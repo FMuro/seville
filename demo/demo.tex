@@ -28,13 +28,13 @@
 
     Seville is a beamer theme inspired by Matthias Vogelgesang's beautiful Metropolis theme.
 
-    This theme uses the Noto font by Google \faGoogle, the Font Awesome 5 icons \faFontAwesome, and the Academicons \aiAcademiaSquare.
+    This theme uses the Fira Sans font by Mozilla \faFirefox, the Font Awesome 5 icons \faFontAwesome, and the Academicons \aiAcademiaSquare.
 
     The logo is borrowed from Graficatessen.
 
     Colors are taken from the Solarized palette \faPalette.
 
-    Text can be \alert{alerted}, \textbf{bold}, or \emph{emphasized}.
+    Text can be \alert{alerted}, \textbf{bold}, \emph{emphasized}, or \texttt{monospaced}.
 
     Presentations using this theme must be compiled with Lua\LaTeX.
 
@@ -56,6 +56,32 @@
     \begin{exampleblock}{Example}
         This is how an example block looks like with this theme.
     \end{exampleblock}
+
+\end{frame}
+
+\section*{Math}
+
+\begin{frame}
+    \frametitle{Math fonts}
+
+    Math fonts look as follows:
+    \begin{align*}
+        F(x)                                                   & =\int_{-\infty}^x\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}, &
+        A\cap\bigcup_{n=0}^\infty B_i                          & =\bigcup_{n=0}^\infty (A\cap B_i),                                                                 \\
+        f(x)                                                   & =\sum_{n=0}^\infty f'(a)\frac{(x-a)^n}{n!},                                                      &
+        A\cup\bigcap_{n=0}^\infty B_i                          & =\bigcap_{n=0}^\infty (A\cup B_i),                                                                 \\
+        A                                                      & = \begin{pmatrix}
+                                                                       a_{11} & \cdots & a_{1p} \\
+                                                                       \vdots & \ddots & \vdots \\
+                                                                       a_{n1} & \cdots & a_{np}
+                                                                   \end{pmatrix},                                                                      &
+        X\otimes(Y\oplus Z)                                    & =X\otimes Y\oplus X\otimes Z,                                                                      \\
+        \bigotimes_{i=1}^nA_i                                  & =A_1\otimes\cdots\otimes A_n,                                                                    &
+        \operatorname{Hom}\left(\bigoplus_{i\in I}X_i,Y\right) &
+        =\prod_{i\in I}\operatorname{Hom}(X_i,Y).
+    \end{align*}
+
+    Math fonts can be bold $\symbf{ABC}$, blackboard bold $\mathbb{ABC}$, caligraphic $\mathcal{ABC}$, and fraktur $\mathfrak{ABC}$. We also have Greek versions $\Alpha\Beta\Gamma$, $\symbf{\Alpha\Beta\Gamma}$,$\alpha\beta\gamma$, $\symbf{\alpha\beta\gamma}$.
 
 \end{frame}
 
@@ -115,7 +141,7 @@
     You can also credit theorems with citations.
 
     \begin{theorem}[\cite{einstein}]
-        This theorem was proved by Einstein. Click on the red citation too!
+        This theorem was proved by Einstein. Click on the red citation!
     \end{theorem}
 
 \end{frame}

@@ -17,9 +17,18 @@
 
 \mode<presentation>
 
+\RequirePackage{FiraSans}
+\setmonofont{FiraMono}[ Numbers = {Monospaced},
+        Scale=MatchUppercase]
+\RequirePackage[fakebold,mathrm=sym]{firamath-otf}
+\setmathfont{XITS Math}[range={frak,cal,\bigcap,\bigcup,\bigoplus,\bigotimes,\vdots,\ddots}]
+\setoperatorfont\mathsf
+%\RequirePackage{noto-mono}
+%\RequirePackage{notomath}
+\renewcommand{\circ}{\mdsmwhtcircle}
+
 \RequirePackage{fontawesome5}
 \RequirePackage{academicons}
-\usepackage[mono,scale=1.05]{notomath}
 \RequirePackage[prefix=]{xcolor-solarized}
 \RequirePackage{etoolbox}
 \RequirePackage{booktabs}
@@ -62,7 +71,7 @@
 
 
 \setbeamertemplate{itemize item}{$\bullet$}
-\setbeamertemplate{itemize subitem}{$\circ$}
+\setbeamertemplate{itemize subitem}{$\mdsmwhtcircle$}
 \setbeamertemplate{itemize subsubitem}{-}
 \setbeamertemplate{enumerate subitem}{\alph{enumii}.}
 \setbeamertemplate{enumerate subsubitem}{\roman{enumiii}.}

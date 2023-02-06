@@ -21,11 +21,13 @@
 \setmonofont{FiraMono}[ Numbers = {Monospaced},
         Scale=MatchUppercase]
 \RequirePackage[fakebold,mathrm=sym]{firamath-otf}
-\setmathfont{XITS Math}[range={frak,cal,\bigcap,\bigcup,\bigoplus,\bigotimes,\vdots,\ddots}]
+\setmathfont{Euler Math}[range={frak,cal}]
+\setmathfont{XITS Math}[range={\bigcap,\bigcup,\bigoplus,\bigotimes,\vdots,\ddots}]
 \setoperatorfont\mathsf
 %\RequirePackage{noto-mono}
 %\RequirePackage{notomath}
 \renewcommand{\circ}{\mdsmwhtcircle}
+\renewcommand{\bullet}{\mdsmblkcircle}
 
 \RequirePackage{fontawesome5}
 \RequirePackage{academicons}
@@ -70,7 +72,7 @@
 \setbeamercolor{section in toc}{fg=base02}
 
 
-\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{itemize item}{$\mdsmblkcircle$}
 \setbeamertemplate{itemize subitem}{$\mdsmwhtcircle$}
 \setbeamertemplate{itemize subsubitem}{-}
 \setbeamertemplate{enumerate subitem}{\alph{enumii}.}

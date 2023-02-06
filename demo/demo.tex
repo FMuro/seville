@@ -64,7 +64,21 @@
 \begin{frame}
     \frametitle{Math fonts}
 
-    Math fonts look as follows:
+    We have different kinds of math fonts, latin and greek:
+
+    \[\begin{array}{cccccccc}
+            abc                       & \symup{abc}       & \symbfit{abc}               & \symbf{abc}                 & \symtt{abc} & \symbb{abc} & \mathfrak{abc}                 \\
+            ABC                       & \symup{ABC}       & \symbfit{ABC}               & \symbf{ABC}                 & \symtt{ABC} & \symbb{ABC} & \mathfrak{ABC} & \mathcal{ABC} \\
+            \symit{\alpha\beta\gamma} & \alpha\beta\gamma & \symbf{\alpha\beta\gamma}   & \symbfup{\alpha\beta\gamma} &             &                                              \\
+            \symit{\Alpha\Beta\Gamma} & \Alpha\Beta\Gamma & \symbfit{\Alpha\Beta\Gamma} & \symbf{\Alpha\Beta\Gamma}   &             &
+        \end{array}\]
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Math symbols}
+
+    Math symbols look as follows:
     \begin{align*}
         F(x)                                                   & =\int_{-\infty}^x\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}, &
         A\cap\bigcup_{n=0}^\infty B_i                          & =\bigcup_{n=0}^\infty (A\cap B_i),                                                                 \\
@@ -80,8 +94,6 @@
         \operatorname{Hom}\left(\bigoplus_{i\in I}X_i,Y\right) &
         =\prod_{i\in I}\operatorname{Hom}(X_i,Y).
     \end{align*}
-
-    Math fonts can be bold $\symbf{ABC}$, blackboard bold $\mathbb{ABC}$, caligraphic $\mathcal{ABC}$, and fraktur $\mathfrak{ABC}$. We also have Greek versions $\Alpha\Beta\Gamma$, $\symbf{\Alpha\Beta\Gamma}$,$\alpha\beta\gamma$, $\symbf{\alpha\beta\gamma}$.
 
 \end{frame}
 

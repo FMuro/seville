@@ -33,7 +33,7 @@ You can also use **XeLaTeX**, but this forces you to install the Fira and Noto f
 
 ## Acknowledgements
 
-This theme is inspired Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
+This theme is inspired by Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
 
 ## Why this theme?
 

@@ -12,13 +12,28 @@ Copy `beamerthemeseville.sty` to your beamer presentation's folder, add
 \usetheme{seville}
 ```
 
-to the preamble, and compile with **LuaLaTeX**.
+to the preamble.
 
 If you're going to use it often, you can place `beamerthemeseville.sty` somewhere in your TeX distribution tree instead. 
 
+## Options
+
+```
+\usetheme[options]{seville}
+``` 
+where `options` may be some of these (comma-separated):
+
+- `fira` uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font and the [Fira Math](https://github.com/firamath/firamath) companion.
+- `noto` uses Google's [Noto](https://fonts.google.com/noto) font.
+- `academicons` uses [Academicons](https://jpswalsh.github.io/academicons/) for some links.
+
+These options require compilation with **LuaLaTeX**. 
+
+You can also use **XeLaTeX**, but this forces you to install the Fira and Noto fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
+
 ## Acknowledgements
 
-This theme is inspired Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font, the [Solarized](https://ethanschoonover.com/solarized/) color palette, icons by [Font Awesome](https://fontawesome.com) and [Academicons](https://jpswalsh.github.io/academicons/), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
+This theme is inspired Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
 
 ## Why this theme?
 
@@ -39,10 +54,6 @@ If you'd like to use this theme but you feel you need some missing options or fe
   - [ ] Extra features.
   - [ ] [CTAN](https://www.ctan.org).
   - [ ] Overleaf.
-
-## XeLaTeX?
-
-Of course! You just have to install some fonts in you system: [Fira](https://github.com/mozilla/Fira), [Fira Math](https://github.com/firamath/firamath), [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts), and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
 
 ## License
 

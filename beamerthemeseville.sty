@@ -17,15 +17,36 @@
 
 \mode<presentation>
 
-\RequirePackage{FiraSans}
-\setmonofont{Fira Mono}[ Numbers = {Monospaced},
-  Scale=MatchUppercase]
-\RequirePackage[fakebold,mathrm=sym]{firamath-otf}
-\setmathfont{Euler Math}[range={frak,cal}]
-\setmathfont{XITS Math}[range={\bigcap,\bigcup,\bigoplus,\bigotimes,\vdots,\ddots}]
-\setoperatorfont\mathsf
-\renewcommand{\circ}{\mdsmwhtcircle}
-\renewcommand{\bullet}{\mdsmblkcircle}
+\newif\if@doFira
+\@doFirafalse
+\DeclareOption{fira}{\@doFiratrue}
+\ProcessOptions
+
+\newif\if@doNoto
+\@doNotofalse
+\DeclareOption{noto}{\@doNototrue}
+\ProcessOptions
+
+\newif\if@doAcademicons
+\@doAcademiconsfalse
+\DeclareOption{academicons}{\@doAcademiconstrue}
+\ProcessOptions
+
+\if@doFira
+  \RequirePackage{FiraSans}
+  \setmonofont{Fira Mono}[ Numbers = {Monospaced},
+    Scale=MatchUppercase]
+  \RequirePackage[fakebold,mathrm=sym]{firamath-otf}
+  \setmathfont{Euler Math}[range={frak,cal}]
+  \setmathfont{XITS Math}[range={\bigcap,\bigcup,\bigoplus,\bigotimes,\vdots,\ddots}]
+  \setoperatorfont\mathsf
+  \renewcommand{\circ}{\mdsmwhtcircle}
+  \renewcommand{\bullet}{\mdsmblkcircle}
+\fi
+
+\if@doNoto
+  \RequirePackage[mono,scale=1.05]{notomath}
+\fi
 
 \RequirePackage{fontawesome5}
 \RequirePackage{academicons}

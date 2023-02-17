@@ -19,7 +19,7 @@
 
 \RequirePackage{FiraSans}
 \setmonofont{Fira Mono}[ Numbers = {Monospaced},
-        Scale=MatchUppercase]
+  Scale=MatchUppercase]
 \RequirePackage[fakebold,mathrm=sym]{firamath-otf}
 \setmathfont{Euler Math}[range={frak,cal}]
 \setmathfont{XITS Math}[range={\bigcap,\bigcup,\bigoplus,\bigotimes,\vdots,\ddots}]
@@ -70,8 +70,8 @@
 \setbeamercolor{section in toc}{fg=base02}
 
 
-\setbeamertemplate{itemize item}{$\mdsmblkcircle$}
-\setbeamertemplate{itemize subitem}{$\mdsmwhtcircle$}
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{itemize subitem}{$\circ$}
 \setbeamertemplate{itemize subsubitem}{-}
 \setbeamertemplate{enumerate subitem}{\alph{enumii}.}
 \setbeamertemplate{enumerate subsubitem}{\roman{enumiii}.}
@@ -105,12 +105,12 @@
   \ifmmode
     \expandafter\beamer@alertedtext@warning
   \else
-  \bfseries\itshape
+    \bfseries\itshape
   \fi
 }
 \providecommand*{\beamer@alertedtext@warning}{%
   \ClassWarning{beamer}
-    {Cannot use bold/italic for alerted text in math mode}%
+  {Cannot use bold/italic for alerted text in math mode}%
 }
 
 
@@ -125,27 +125,27 @@
 %\RequirePackage[most]{tcolorbox}
 
 \tcbsetforeverylayer{
-    fonttitle=\bfseries\itshape,
-    colback=base3,
-    colbacktitle=base3,
-    size=tight,
-    top=2mm,
-    bottom=.5mm,
-    enhanced,
-    frame hidden,
-    borderline west = {2pt}{-2mm}{tcbcoltitle}
+  fonttitle=\bfseries\itshape,
+  colback=base3,
+  colbacktitle=base3,
+  size=tight,
+  top=2mm,
+  bottom=.5mm,
+  enhanced,
+  frame hidden,
+  borderline west = {2pt}{-2mm}{tcbcoltitle}
 }
 
 \NewDocumentEnvironment{proposition}{ o }{%
-\setbeamercolor{block title}{fg=magenta}
-\begin{block}{Proposition \IfValueT{#1}{(#1)}}
+  \setbeamercolor{block title}{fg=magenta}
+  \begin{block}{Proposition \IfValueT{#1}{(#1)}}
     }{%
-\end{block}}
+  \end{block}}
 \NewDocumentEnvironment{remark}{ o }{%
-\setbeamercolor{block title}{fg=violet}
-\begin{block}{Remark \IfValueT{#1}{(#1)}}
+  \setbeamercolor{block title}{fg=violet}
+  \begin{block}{Remark \IfValueT{#1}{(#1)}}
     }{%
-\end{block}}
+  \end{block}}
 
 
 
@@ -153,8 +153,8 @@
 \NewDocumentCommand\site{ o m }{\newcommand\insertsite{\href{\IfValueTF{#1}{#1}{#2}}{\mbox{{\scriptsize\faHome}\hspace{.5em}\scriptsize #2}}}}
 \NewDocumentCommand\mathscinet{ m }{\newcommand\insertmathscinet{\href{#1}{\mbox{{\scriptsize\faUniversity}\hspace{.5em}\scriptsize MathSciNet}}}}
 \NewDocumentCommand\arxiv{ s m }{
-    \newcommand\insertarxiv{\href{\IfBooleanTF{#1}{https://arxiv.org/a/#2.html}{#2}}{\mbox{\scriptsize\aiarXiv}\hspace{.5em}\scriptsize \IfBooleanTF{#1}{#2}{arXiv}}}
-  }
+  \newcommand\insertarxiv{\href{\IfBooleanTF{#1}{https://arxiv.org/a/#2.html}{#2}}{\mbox{\scriptsize\aiarXiv}\hspace{.5em}\scriptsize \IfBooleanTF{#1}{#2}{arXiv}}}
+}
 \NewDocumentCommand\zotero{ m }{\newcommand\insertzotero{\href{#1}{\mbox{{\scriptsize\aiZoteroSquare}\hspace{.5em}\scriptsize Zotero}}}}
 \NewDocumentCommand\googlescholar{ m }{\newcommand\insertgooglescholar{\href{#1}{\mbox{{\scriptsize\aiGoogleScholar}\hspace{.5em}\scriptsize Google Scholar}}}}
 \NewDocumentCommand\orcid{ m }{\newcommand\insertorcid{\href{#1}{\mbox{{\scriptsize\aiOrcid}}\hspace{.5em}\scriptsize ORCID}}}
@@ -168,7 +168,7 @@
 
 % Title page
 \defbeamertemplate*{title page}{}{
- \vfill
+  \vfill
   {\inserttitlegraphic}\par\bigskip
   {\usebeamerfont{title}\color{red}{\inserttitle}}\par
   {\usebeamerfont{subtitle}\insertsubtitle}\par
@@ -176,20 +176,20 @@
   {\usebeamerfont{author}\insertauthor}\newline
   {\usebeamerfont{institute}\insertinstitute}\par
   {\@ifundefined{insertemail}{}{\insertemail\quad}
-  \@ifundefined{insertsite}{}{\insertsite\quad}
-  \@ifundefined{insertmathscinet}{}{\insertmathscinet\quad}
-  \@ifundefined{insertarxiv}{}{\insertarxiv\quad}
-  \@ifundefined{insertzotero}{}{\insertzotero\quad}
-  \@ifundefined{insertgooglescholar}{}{\insertgooglescholar\quad}
-  \@ifundefined{insertorcid}{}{\insertorcid\quad}
-  \@ifundefined{insertscopus}{}{\insertscopus\quad}
-  \@ifundefined{insertgithub}{}{\insertgithub\quad}
-  \@ifundefined{insertgitlab}{}{\insertgitlab\quad}
-  \@ifundefined{insertfacebook}{}{\insertfacebook\quad}
-  \@ifundefined{insertlinkedin}{}{\insertlinkedin\quad}
-  \@ifundefined{inserttwitter}{}{\inserttwitter\quad}
-  \@ifundefined{insertinstagram}{}{\insertinstagram\quad}
-}}
+    \@ifundefined{insertsite}{}{\insertsite\quad}
+    \@ifundefined{insertmathscinet}{}{\insertmathscinet\quad}
+    \@ifundefined{insertarxiv}{}{\insertarxiv\quad}
+    \@ifundefined{insertzotero}{}{\insertzotero\quad}
+    \@ifundefined{insertgooglescholar}{}{\insertgooglescholar\quad}
+    \@ifundefined{insertorcid}{}{\insertorcid\quad}
+    \@ifundefined{insertscopus}{}{\insertscopus\quad}
+    \@ifundefined{insertgithub}{}{\insertgithub\quad}
+    \@ifundefined{insertgitlab}{}{\insertgitlab\quad}
+    \@ifundefined{insertfacebook}{}{\insertfacebook\quad}
+    \@ifundefined{insertlinkedin}{}{\insertlinkedin\quad}
+    \@ifundefined{inserttwitter}{}{\inserttwitter\quad}
+    \@ifundefined{insertinstagram}{}{\insertinstagram\quad}
+  }}
 
 \renewcommand<>\beamer@framefootnotetext[1]{%
   \global\setbox\beamer@footins\vbox{%
@@ -200,10 +200,10 @@
     \reset@font\footnotesize
     \@parboxrestore
     \protected@edef\@currentlabel
-   {\noindent\csname p@footnote\endcsname\@thefnmark}%
-    \hskip -1.5em    
+    {\noindent\csname p@footnote\endcsname\@thefnmark}%
+    \hskip -1.5em
     \color@begingroup
-      \uncover#2{\@makefntext{%
+    \uncover#2{\@makefntext{%
         \rule\z@\footnotesep\ignorespaces\parbox[t]{.99\textwidth}{#1\@finalstrut\strutbox}\vskip1sp}}%
     \color@endgroup}%
 }

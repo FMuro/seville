@@ -23,7 +23,7 @@ If you're going to use it often, you can place `beamerthemeseville.sty` somewher
 ``` 
 where `options` may be some of these (comma-separated):
 
-- `fira` uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font and the [Fira Math](https://github.com/firamath/firamath) companion.
+- `fira` uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font and its [Fira Math](https://github.com/firamath/firamath) companion.
 - `noto` uses Google's [Noto](https://fonts.google.com/noto) font.
 - `academicons` uses [Academicons](https://jpswalsh.github.io/academicons/) for some links.
 

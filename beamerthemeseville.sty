@@ -42,10 +42,14 @@
   \setoperatorfont\mathsf
   \renewcommand{\circ}{\mdsmwhtcircle}
   \renewcommand{\bullet}{\mdsmblkcircle}
+\else
+  \RequirePackage{lmodern}
 \fi
 
 \if@doNoto
   \RequirePackage[mono]{notomath}
+\else
+  \RequirePackage{lmodern}
 \fi
 
 \if@doAcademicons

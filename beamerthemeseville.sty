@@ -19,18 +19,18 @@
 
 \newif\if@doFira
 \@doFirafalse
-\DeclareOption{fira}{\@doFiratrue}
-\ProcessOptions
+\DeclareOptionBeamer{fira}{\@doFiratrue}
+\ProcessOptionsBeamer
 
 \newif\if@doNoto
 \@doNotofalse
-\DeclareOption{noto}{\@doNototrue}
-\ProcessOptions
+\DeclareOptionBeamer{noto}{\@doNototrue}
+\ProcessOptionsBeamer
 
 \newif\if@doAcademicons
 \@doAcademiconsfalse
-\DeclareOption{academicons}{\@doAcademiconstrue}
-\ProcessOptions
+\DeclareOptionBeamer{academicons}{\@doAcademiconstrue}
+\ProcessOptionsBeamer
 
 \if@doFira
   \RequirePackage{FiraSans}
@@ -43,13 +43,11 @@
   \renewcommand{\circ}{\mdsmwhtcircle}
   \renewcommand{\bullet}{\mdsmblkcircle}
 \else
-  \RequirePackage{lmodern}
-\fi
-
-\if@doNoto
-  \RequirePackage[mono]{notomath}
-\else
-  \RequirePackage{lmodern}
+  \if@doNoto
+    \RequirePackage[mono]{notomath}
+  \else
+    \RequirePackage{lmodern}
+  \fi
 \fi
 
 \if@doAcademicons

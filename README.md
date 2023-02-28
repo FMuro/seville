@@ -23,17 +23,16 @@ If you're going to use it often, you can place `beamerthemeseville.sty` somewher
 ``` 
 where `options` may be some of these (comma-separated):
 
+- `lmodern` uses the Latin Modern font, for a more classical LaTeX look.
 - `fira` uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font and its [Fira Math](https://github.com/firamath/firamath) companion.
 - `noto` uses Google's [Noto](https://fonts.google.com/noto) font.
 - `academicons` uses [Academicons](https://jpswalsh.github.io/academicons/) for some links.
 
-These options require compilation with **LuaLaTeX**. 
-
-You can also use **XeLaTeX**, but this forces you to install the Fira and Noto fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
+The last three options require compilation with **LuaLaTeX**. You can use **XeLaTeX** instead, but this forces you to install the Fira and Noto fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
 
 ## Acknowledgements
 
-This theme is inspired by Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
+This theme is inspired by Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, the [Alegreya Sans](https://www.huertatipografica.com/es/fonts/alegreya-sans-ht) font, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
 
 ## Why this theme?
 

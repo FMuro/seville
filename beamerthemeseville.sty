@@ -27,6 +27,11 @@
 \DeclareOptionBeamer{noto}{\@doNototrue}
 \ProcessOptionsBeamer
 
+\newif\if@doAlegreya
+\@doAlegreyafalse
+\DeclareOptionBeamer{alegreya}{\@doAlegreyatrue}
+\ProcessOptionsBeamer
+
 \newif\if@doLmodern
 \@doLmodernfalse
 \DeclareOptionBeamer{lmodern}{\@doLmoderntrue}
@@ -54,12 +59,19 @@
     \if@doLmodern
       \RequirePackage{lmodern}
     \else
-      \RequirePackage{AlegreyaSans}
-      \RequirePackage{eulervm}
-      \RequirePackage{bbold}
-      \usepackage[T1]{fontenc}
-      \usepackage{textcomp}
-      \usepackage[scaled=.83]{beramono}
+      \if@doAlegreya
+        \RequirePackage{AlegreyaSans}
+        \RequirePackage{eulervm}
+        \RequirePackage{bbold}
+        \RequirePackage[T1]{fontenc}
+        \RequirePackage{textcomp}
+        \RequirePackage[scaled=.83]{beramono}
+      \else
+        \RequirePackage[default]{sourcesanspro}
+        \RequirePackage{sourcecodepro}
+        \RequirePackage{eulervm}
+        \RequirePackage[T1]{fontenc}
+      \fi
     \fi
   \fi
 \fi

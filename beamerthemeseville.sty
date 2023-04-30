@@ -42,6 +42,11 @@
 \DeclareOptionBeamer{academicons}{\@doAcademiconstrue}
 \ProcessOptionsBeamer
 
+\newif\if@doMaterial
+\@doMaterialfalse
+\DeclareOptionBeamer{material}{\@doMaterialtrue}
+\ProcessOptionsBeamer
+
 \if@doFira
   \RequirePackage{FiraSans}
   \setmonofont{Fira Mono}[ Numbers = {Monospaced},
@@ -81,7 +86,11 @@
 \fi
 
 \RequirePackage{fontawesome5}
+\if@doMaterial
+\usepackage[prefix=]{xcolor-material}
+\else
 \RequirePackage[prefix=]{xcolor-solarized}
+\fi
 \RequirePackage{etoolbox}
 \RequirePackage{booktabs}
 
@@ -89,18 +98,48 @@
 \setbeamertemplate{bibliography item}{\faBook}
 
 % Bibliography colors
+\if@doMaterial
+\setbeamercolor{bibliography item}{fg=Grey}
+\setbeamercolor*{bibliography entry title}{fg=BlueGrey900}
+\setbeamercolor*{bibliography entry author}{fg=BlueGrey900}
+\setbeamercolor*{bibliography entry location}{fg=Grey700}
+\setbeamercolor*{bibliography entry note}{fg=Grey}
+\else
 \setbeamercolor{bibliography item}{fg=base0}
 \setbeamercolor*{bibliography entry title}{fg=base02}
 \setbeamercolor*{bibliography entry author}{fg=base02}
 \setbeamercolor*{bibliography entry location}{fg=base01}
 \setbeamercolor*{bibliography entry note}{fg=base0}
+\fi
 
 \useinnertheme{tcolorbox}
 
 % Settings
 \setbeamertemplate{navigation symbols}{}
 
-\setbeamercolor{title}{fg=violet}
+\if@doMaterial
+\setbeamercolor{title}{fg=GoogleRed}
+\setbeamercolor*{frametitle}{bg=BlueGrey900,fg=Amber50!85!Grey}
+\setbeamercolor*{background canvas}{bg=Amber50}
+\setbeamercolor*{normal text}{fg=BlueGrey900}
+\setbeamercolor*{inverted text}{fg=Amber50}
+\setbeamercolor*{alerted text}{fg=GoogleRed}
+\setbeamercolor{block title}{fg=GoogleBlue, bg=Amber50}
+\setbeamercolor{block title alerted}{fg=GoogleRed, bg=Amber50}
+\setbeamercolor{block title example}{fg=GoogleGreen, bg=Amber50}
+\setbeamercolor{block body}{bg=Amber50}
+\setbeamercolor{block body alerted}{bg=Amber50}
+\setbeamercolor{block body example}{bg=Amber50}
+\setbeamercolor{enumerate item}{fg=Grey}
+\setbeamercolor{enumerate subitem}{fg=Grey}
+\setbeamercolor{enumerate subsubitem}{fg=Grey}
+\setbeamercolor{itemize item}{fg=Grey}
+\setbeamercolor{itemize subitem}{fg=Grey}
+\setbeamercolor{itemize subsubitem}{fg=Grey}
+\setbeamercolor{section number projected}{fg=Grey}
+\setbeamercolor{section in toc}{fg=BlueGrey900}
+\else
+\setbeamercolor{title}{fg=red}
 \setbeamercolor*{frametitle}{bg=base02,fg=base2}
 \setbeamercolor*{background canvas}{bg=base3}
 \setbeamercolor*{normal text}{fg=base02}
@@ -120,6 +159,7 @@
 \setbeamercolor{itemize subsubitem}{fg=base1}
 \setbeamercolor{section number projected}{fg=base1}
 \setbeamercolor{section in toc}{fg=base02}
+\fi
 
 
 \setbeamertemplate{itemize item}{$\bullet$}
@@ -133,21 +173,46 @@
 
 
 \AtBeginEnvironment{theorem}{%
+\if@doMaterial
+  \setbeamercolor{block title}{fg=GoogleRed}
+\else
   \setbeamercolor{block title}{fg=red}
+\fi
 }
 \AtBeginEnvironment{lemma}{%
+\if@doMaterial
+  \setbeamercolor{block title}{fg=GoogleYellow}
+\else
   \setbeamercolor{block title}{fg=yellow}
+\fi
 }
 \AtBeginEnvironment{corollary}{%
+\if@doMaterial
+  \setbeamercolor{block title}{fg=Cyan}
+\else
   \setbeamercolor{block title}{fg=cyan}
+\fi
 }
 \AtBeginEnvironment{fact}{%
+\if@doMaterial
+  \setbeamercolor{block title}{fg=Orange}
+\else
   \setbeamercolor{block title}{fg=orange}
+\fi
 }
 \AtBeginEnvironment{proof}{%
+\if@doMaterial
+  \setbeamercolor{block title}{fg=Grey}
+\else
   \setbeamercolor{block title}{fg=base1}
+\fi
 }
+
+\if@doMaterial
+\renewcommand{\qedsymbol}{$\color{Grey}{\blacksquare}$}
+\else
 \renewcommand{\qedsymbol}{$\color{base1}{\blacksquare}$}
+\fi
 
 \setlength{\parskip}{.5\baselineskip}
 
@@ -176,6 +241,19 @@
 
 %\RequirePackage[most]{tcolorbox}
 
+\if@doMaterial
+\tcbsetforeverylayer{
+  fonttitle=\bfseries\itshape,
+  colback=Amber50,
+  colbacktitle=Amber50,
+  size=tight,
+  top=2mm,
+  bottom=.5mm,
+  enhanced,
+  frame hidden,
+  borderline west = {2pt}{-2mm}{tcbcoltitle}
+  }
+\else
 \tcbsetforeverylayer{
   fonttitle=\bfseries\itshape,
   colback=base3,
@@ -186,15 +264,24 @@
   enhanced,
   frame hidden,
   borderline west = {2pt}{-2mm}{tcbcoltitle}
-}
+  }
+\fi
 
 \NewDocumentEnvironment{proposition}{ o }{%
+\if@doMaterial
+  \setbeamercolor{block title}{fg=Indigo}
+\else
   \setbeamercolor{block title}{fg=magenta}
+\fi
   \begin{block}{Proposition \IfValueT{#1}{(#1)}}
     }{%
   \end{block}}
 \NewDocumentEnvironment{remark}{ o }{%
+\if@doMaterial
+  \setbeamercolor{block title}{fg=Purple}
+\else
   \setbeamercolor{block title}{fg=violet}
+\fi
   \begin{block}{Remark \IfValueT{#1}{(#1)}}
     }{%
   \end{block}}
@@ -222,7 +309,7 @@
 \defbeamertemplate*{title page}{}{
   \vfill
   {\inserttitlegraphic}\par\bigskip
-  {\usebeamerfont{title}\color{red}{\inserttitle}}\par
+  {\usebeamerfont{title}{\usebeamercolor[fg]{title}{\inserttitle}}}\par
   {\usebeamerfont{subtitle}\insertsubtitle}\par
   {\usebeamerfont{date}\insertdate}\par
   {\usebeamerfont{author}\insertauthor}\newline

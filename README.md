@@ -28,11 +28,12 @@ where `options` may be some of these (comma-separated):
 - `lmodern` uses the Latin Modern font, for a more classical LaTeX look.
 - `fira` uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font and its [Fira Math](https://github.com/firamath/firamath) companion.
 - `noto` uses Google's [Noto](https://fonts.google.com/noto) font.
+- `material` uses Google's [Material Design color system](https://m2.material.io/design/color/the-color-system.html) while keeping a similar look.
 - `academicons` uses [Academicons](https://jpswalsh.github.io/academicons/) for some links.
 
 Since the first four options select the main fonts, you should only use one of them. The last one is compatible with the rest.
 
-The last three options require compilation with **LuaLaTeX**. You can use **XeLaTeX** instead, but this forces you to install the Fira and Noto fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
+The options `fira`, `noto`, and `academicons` require compilation with **LuaLaTeX**. You can use **XeLaTeX** instead, but this forces you to install the Fira and Noto fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
 
 ## Acknowledgements
 

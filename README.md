@@ -28,16 +28,18 @@ where `options` may be some of these (comma-separated):
 - `lmodern` uses the Latin Modern font, for a more classical LaTeX look.
 - `fira` uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font and its [Fira Math](https://github.com/firamath/firamath) companion.
 - `noto` uses Google's [Noto](https://fonts.google.com/noto) font.
+- `lualatex` uses the default fonts, Adobe's [Source Sans](https://fonts.adobe.com/fonts/source-sans) and [Source Code Pro](https://fonts.adobe.com/fonts/source-code-pro) fonts, with **LuaLaTeX** . The math font is [STIX Two Math](https://www.stixfonts.org).
+- `xelatex` same as above but with **XeLaTeX**.
 - `material` uses Google's [Material Design color system](https://m2.material.io/design/color/the-color-system.html) while keeping a similar look.
 - `academicons` uses [Academicons](https://jpswalsh.github.io/academicons/) for some links.
 
 Since the first four options select the main fonts, you should only use one of them. The last one is compatible with the rest.
 
-The options `fira`, `noto`, and `academicons` require compilation with **LuaLaTeX**. You can use **XeLaTeX** instead, but this forces you to install the Fira and Noto fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
+The options `lualatex`, `fira`, `noto`, and `academicons` require compilation with **LuaLaTeX**. You can use **XeLaTeX** instead, and you must with the `xelatex` option, but this forces you to install the Fira, Source, STIX Two, and Noto fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
 
 ## Acknowledgements
 
-This theme is inspired by Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, Adobe's [Source Sans Pro](https://fonts.adobe.com/fonts/source-sans) and [Source Code Pro](https://fonts.adobe.com/fonts/source-code-pro) fonts, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
+This theme is inspired by Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, Adobe's [Source Sans](https://fonts.adobe.com/fonts/source-sans) and [Source Code Pro](https://fonts.adobe.com/fonts/source-code-pro) fonts, the [Euler Virtual Math](https://www.ctan.org/pkg/eulervm) font based in Hermann Zapf's designs, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
 
 ## Why this theme?
 

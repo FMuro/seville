@@ -47,6 +47,16 @@
 \DeclareOptionBeamer{material}{\@doMaterialtrue}
 \ProcessOptionsBeamer
 
+\newif\if@doLualatex
+\@doLualatexfalse
+\DeclareOptionBeamer{lualatex}{\@doLualatextrue}
+\ProcessOptionsBeamer
+
+\newif\if@doXelatex
+\@doXelatexfalse
+\DeclareOptionBeamer{xelatex}{\@doXelatextrue}
+\ProcessOptionsBeamer
+
 \if@doFira
   \RequirePackage{FiraSans}
   \setmonofont{Fira Mono}[ Numbers = {Monospaced},
@@ -58,24 +68,52 @@
   \renewcommand{\circ}{\mdsmwhtcircle}
   \renewcommand{\bullet}{\mdsmblkcircle}
 \else
-  \if@doNoto
-    \RequirePackage[mono]{notomath}
+  \if@doXelatex
+    \RequirePackage{fontspec}
+    \setmainfont{Source Serif 4}
+    \setsansfont{Source Sans 3}
+    \setmonofont{Source Code Pro}
+    \RequirePackage{unicode-math}
+    \setmathfont{STIX Two Math}
+    \setmathfont[range=\mathup]  {Source Sans 3}
+    \setmathfont[range=\mathbfup]{Source Sans 3 Bold}
+    \setmathfont[range=\mathbfit]{Source Sans 3 Bold Italic}
+    \setmathfont[range=\mathit]  {Source Sans 3 Italic}
+    \setoperatorfont\mathsf
   \else
-    \if@doLmodern
-      \RequirePackage{lmodern}
+    \if@doLualatex
+      \RequirePackage{fontspec}
+      \setmainfont{Source Serif Pro}
+      \setsansfont{Source Sans Pro}
+      \setmonofont{Source Code Pro}
+      \RequirePackage{unicode-math}
+      \setmathfont{STIX Two Math}
+      \setmathfont[range=\mathup]  {Source Sans Pro}
+      \setmathfont[range=\mathbfup]{Source Sans Pro Bold}
+      \setmathfont[range=\mathbfit]{Source Sans Pro Bold Italic}
+      \setmathfont[range=\mathit]  {Source Sans Pro Italic}
+      \setoperatorfont\mathsf
     \else
-      \if@doAlegreya
-        \RequirePackage{AlegreyaSans}
-        \RequirePackage{eulervm}
-        \RequirePackage{bbold}
-        \RequirePackage[T1]{fontenc}
-        \RequirePackage{textcomp}
-        \RequirePackage[scaled=.83]{beramono}
+      \if@doNoto
+        \RequirePackage[mono]{notomath}
       \else
-        \RequirePackage[default]{sourcesanspro}
-        \RequirePackage{sourcecodepro}
-        \RequirePackage{eulervm}
-        \RequirePackage[T1]{fontenc}
+        \if@doLmodern
+          \RequirePackage{lmodern}
+        \else
+          \if@doAlegreya
+            \RequirePackage{AlegreyaSans}
+            \RequirePackage{eulervm}
+            \RequirePackage{bbold}
+            \RequirePackage[T1]{fontenc}
+            \RequirePackage{textcomp}
+            \RequirePackage[scaled=.83]{beramono}
+          \else
+            \RequirePackage[default]{sourcesanspro}
+            \RequirePackage{sourcecodepro}
+            \RequirePackage{eulervm}
+            \RequirePackage[T1]{fontenc}
+          \fi
+        \fi
       \fi
     \fi
   \fi

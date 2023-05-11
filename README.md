@@ -35,7 +35,7 @@ where `options` may be some of these (comma-separated):
 
 Since the first six options select the main fonts, you should only use one of them. The last two ones are compatible between them and with the rest.
 
-The options `fira`, `noto`, `lualatex`, and `academicons` require compilation with **LuaLaTeX**. You can use **XeLaTeX** instead, and you must with the `xelatex` option, but this forces you to install the Fira, Source, STIX Two, and Noto fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
+The options `fira`, `noto`, `lualatex`, and `academicons` require compilation with **LuaLaTeX**. With `fira`, `noto`, and `academicons` you can use **XeLaTeX** instead, and you must with the `xelatex` option, but this forces you to install the Fira, Noto, Source, and STIX Two fonts in your system, if you use these options. In fact, if you use Fira, you also have to install [Euler Math](https://www.ctan.org/tex-archive/fonts/euler-math) (used for calligraphic and fraktur math fonts) and [XITS](https://github.com/aliftype/xits) (used for missing symbols in Fira Math).
 
 ## Acknowledgements
 

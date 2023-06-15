@@ -95,7 +95,8 @@
       \setoperatorfont\mathsf
     \else
       \if@doNoto
-        \RequirePackage[mono,sfdefault,vvarbb]{notomath}
+        \RequirePackage[sfdefault,vvarbb]{notomath}
+		\RequirePackage[scale=\NotoText@scale]{noto-mono}
       \else
         \if@doLmodern
           \RequirePackage{lmodern}

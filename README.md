@@ -49,7 +49,7 @@ The options `fira`, `noto`, `lualatex`, and `academicons` require compilation wi
 
 ## Acknowledgements
 
-This theme is inspired by Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, Adobe's [Source Sans](https://fonts.adobe.com/fonts/source-sans) and [Source Code Pro](https://fonts.adobe.com/fonts/source-code-pro) fonts, the [Euler Virtual Math](https://www.ctan.org/pkg/eulervm) font based in Hermann Zapf's designs, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
+This theme is inspired by Matthias Vogelgesang's beautiful [Metropolis theme](https://github.com/matze/mtheme/). It uses the [Solarized](https://ethanschoonover.com/solarized/) color palette, Adobe's [Source Sans](https://fonts.adobe.com/fonts/source-sans), [Source Code Pro](https://fonts.adobe.com/fonts/source-code-pro) and [Source Serif](https://fonts.adobe.com/fonts/source-serif) fonts, the [Euler Virtual Math](https://www.ctan.org/pkg/eulervm) font based in Hermann Zapf's designs, icons by [Font Awesome](https://fontawesome.com), and a lovely logo by [Graficatessen](https://graficatessen.es/), along with many other FOSS things. I'm grateful to all creators that make this possible.
 
 ## Why this theme?
 

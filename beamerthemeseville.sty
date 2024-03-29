@@ -152,24 +152,22 @@
   \setbeamercolor*{bibliography entry note}{fg=base0}
 \fi
 
-\useinnertheme{tcolorbox}
+\useinnertheme[titlepage=false]{tcolorbox}
 
 % Settings
 \setbeamertemplate{navigation symbols}{}
 
 \if@doMaterial
   \setbeamercolor{title}{fg=GoogleRed}
-  \setbeamercolor*{frametitle}{bg=BlueGrey900,fg=Amber50!85!Grey}
-  \setbeamercolor*{background canvas}{bg=Amber50}
-  \setbeamercolor*{normal text}{fg=BlueGrey900}
-  \setbeamercolor*{inverted text}{fg=Amber50}
+  \setbeamercolor*{frametitle}{bg=BlueGrey900, fg=Amber50!85!Grey}
+  \setbeamercolor*{normal text}{fg=BlueGrey900, bg=Amber50}
   \setbeamercolor*{alerted text}{fg=GoogleRed}
-  \setbeamercolor{block title}{fg=GoogleBlue, bg=Amber50}
-  \setbeamercolor{block title alerted}{fg=GoogleRed, bg=Amber50}
-  \setbeamercolor{block title example}{fg=GoogleGreen, bg=Amber50}
-  \setbeamercolor{block body}{bg=Amber50}
-  \setbeamercolor{block body alerted}{bg=Amber50}
-  \setbeamercolor{block body example}{bg=Amber50}
+  \setbeamercolor{part title}{fg=GoogleBlue}
+  \setbeamercolor{section title}{fg=GoogleBlue}
+  \setbeamercolor{subsection title}{fg=GoogleBlue}
+  \setbeamercolor{block title}{fg=GoogleBlue}
+  \setbeamercolor{block title alerted}{fg=GoogleRed}
+  \setbeamercolor{block title example}{fg=GoogleGreen}
   \setbeamercolor{enumerate item}{fg=BlueGrey300}
   \setbeamercolor{enumerate subitem}{fg=BlueGrey300}
   \setbeamercolor{enumerate subsubitem}{fg=BlueGrey300}
@@ -180,17 +178,16 @@
   \setbeamercolor{section in toc}{fg=BlueGrey900}
 \else
   \setbeamercolor{title}{fg=red}
-  \setbeamercolor*{frametitle}{bg=base02,fg=base2}
-  \setbeamercolor*{background canvas}{bg=base3}
-  \setbeamercolor*{normal text}{fg=base02}
-  \setbeamercolor*{inverted text}{fg=base2}
+  \setbeamercolor*{frametitle}{bg=base02, fg=base2}
+  \setbeamercolor*{normal text}{fg=base02, bg=base3}
   \setbeamercolor*{alerted text}{fg=red}
-  \setbeamercolor{block title}{fg=blue, bg=base3}
-  \setbeamercolor{block title alerted}{fg=red, bg=base3}
-  \setbeamercolor{block title example}{fg=green, bg=base3}
-  \setbeamercolor{block body}{bg=base3}
-  \setbeamercolor{block body alerted}{bg=base3}
-  \setbeamercolor{block body example}{bg=base3}
+  \let\seville@sectiontitleformat\@empty%
+  \setbeamercolor{part title}{fg=blue}
+  \setbeamercolor{section title}{fg=blue}
+  \setbeamercolor{subsection title}{fg=blue}
+  \setbeamercolor{block title}{fg=blue}
+  \setbeamercolor{block title alerted}{fg=red}
+  \setbeamercolor{block title example}{fg=green}
   \setbeamercolor{enumerate item}{fg=base1}
   \setbeamercolor{enumerate subitem}{fg=base1}
   \setbeamercolor{enumerate subsubitem}{fg=base1}
